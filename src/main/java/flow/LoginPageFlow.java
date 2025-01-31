@@ -7,6 +7,11 @@ import static org.openqa.selenium.By.xpath;
 
 public class LoginPageFlow {
 
+
+    public static void main(String[] args) {
+        System.out.println(100 % 2 + (100 / 2));
+    }
+
     String emailFieldXPath = "//input[@placeholder='Username']";
     String submitButtonXPath = "//input[@type=\"submit\"]";
     String errorMessageXpath = "//h3[@data-test=\"error\"]";
