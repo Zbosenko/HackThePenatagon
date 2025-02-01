@@ -11,7 +11,7 @@ public class LoginPageFlow {
     String submitButtonXPath = "//input[@type=\"submit\"]";
     String errorMessageXpath = "//h3[@data-test=\"error\"]";
 
-    //доступ ОбъектСКоторымРаботаеМетод имяМетода(Параметр, который принимает метод)
+    //доступ ОбъектСКоторымРаботаетМетод имяМетода(Параметр, который принимает метод)
     public LoginPageFlow fillLoginField(String login) { //скобочки
         $(xpath(emailFieldXPath)).shouldBe(Condition.visible).setValue(login); //код, который выполняется в методе
         return this; //то, что метод возвращает после выполнения. This возвращает объект без изменений (чтобы продолжить цепочку, мы не меняем страницу, а просто с ней взаимодействуем)
