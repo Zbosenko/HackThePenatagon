@@ -42,5 +42,4 @@ public class LoginPageFlow {
     public void assertErrorMessage(String errorMessageText) {
         $(xpath(errorMessageXPath)).shouldBe(Condition.text(errorMessageText));
     }
-
 }
