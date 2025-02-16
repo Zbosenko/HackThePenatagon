@@ -1,3 +1,4 @@
+import flow.LoginPageFlow;
 import org.junit.jupiter.api.Test;
 
 public class EmailPageTests extends BaseTest {
@@ -6,7 +7,7 @@ public class EmailPageTests extends BaseTest {
     void emptyPasswordFieldTest() {
         String password = "123";
 
-    new EmailPageFlow()
+    new LoginPageFlow()
             .fillPasswordField(password)
             .assertPasswordFieldText(password)
             .clickSubmitButton()
