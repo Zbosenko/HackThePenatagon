@@ -11,6 +11,9 @@ public class LoginPageFlow {
     String submitButtonXPath = "//input[@type=\"submit\"]";
     String errorMessageXpath = "//h3[@data-test=\"error\"]";
 
+    String passwordFieldXPath = "//input[@placeholder='Password']";
+    String errorMessageXPath = "//h3[@data-test=\"error\"]";;
+
     //доступ ОбъектСКоторымРаботаетМетод имяМетода(Параметр, который принимает метод)
     public LoginPageFlow fillLoginField(String login) { //скобочки
         $(xpath(emailFieldXPath)).shouldBe(Condition.visible).setValue(login); //код, который выполняется в методе
@@ -32,4 +35,25 @@ public class LoginPageFlow {
         $(xpath(errorMessageXpath)).shouldBe(Condition.text(errorMessageText));
         return this;
     }
+
+    public LoginPageFlow fillPasswordField(String password) {
+        $(xpath(passwordFieldXPath)).shouldBe(Condition.visible).setValue(password);
+        return this;
+    }
+
+    public LoginPageFlow assertPasswordFieldText(String enteredPassword) {
+        $(xpath(passwordFieldXPath)).shouldHave(Condition.value(enteredPassword));
+        return this;
+    }
+
+    public LoginPageFlow clickSubmitButton() {
+        $(xpath(submitButtonXPath)).shouldBe(Condition.visible).click();
+        return this;
+    }
+
+    public LoginPageFlow assertErrorMessage(String errorMessageText) {
+        $(xpath(errorMessageXPath)).shouldBe(Condition.text(errorMessageText));
+        return this;
+    }
+
 }

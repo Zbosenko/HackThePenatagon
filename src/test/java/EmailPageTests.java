@@ -1,4 +1,3 @@
-import flow.EmailPageFlow;
 import org.junit.jupiter.api.Test;
 
 public class EmailPageTests extends BaseTest {
