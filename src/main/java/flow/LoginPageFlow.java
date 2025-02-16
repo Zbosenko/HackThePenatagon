@@ -7,12 +7,10 @@ import static org.openqa.selenium.By.xpath;
 
 public class LoginPageFlow {
 
-    String emailFieldXPath = "//input[@placeholder='Username']";
+    String emailFieldXPath = "//input[@placeholder=\"Username\"]";
+    String passwordFieldXPath = "//input[@placeholder=\"Password\"]";
     String submitButtonXPath = "//input[@type=\"submit\"]";
-    String errorMessageXpath = "//h3[@data-test=\"error\"]";
-
-    String passwordFieldXPath = "//input[@placeholder='Password']";
-    String errorMessageXPath = "//h3[@data-test=\"error\"]";;
+    String errorMessageXPath = "//h3[@data-test=\"error\"]";
 
     //доступ ОбъектСКоторымРаботаетМетод имяМетода(Параметр, который принимает метод)
     public LoginPageFlow fillLoginField(String login) { //скобочки
@@ -22,17 +20,6 @@ public class LoginPageFlow {
 
     public LoginPageFlow assertLoginFieldText(String enteredLogin) {
         $(xpath(emailFieldXPath)).shouldHave(Condition.value(enteredLogin));
-        return this;
-    }
-
-    //Метод может ничего не принимать
-    public LoginPageFlow clickSubmitButton() {
-        $(xpath(submitButtonXPath)).shouldBe(Condition.visible).click();
-        return this;
-    }
-
-    public LoginPageFlow assertErrorMessage(String errorMessageText) {
-        $(xpath(errorMessageXpath)).shouldBe(Condition.text(errorMessageText));
         return this;
     }
 
@@ -46,6 +33,7 @@ public class LoginPageFlow {
         return this;
     }
 
+    //Метод может ничего не принимать
     public LoginPageFlow clickSubmitButton() {
         $(xpath(submitButtonXPath)).shouldBe(Condition.visible).click();
         return this;
