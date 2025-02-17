@@ -40,7 +40,7 @@ public class LoginPageFlow {
         return this;
     }
 
-    public ExampleClassFlow goToExampleClass() {
-        return new ExampleClassFlow();
+    public MainPageFlow goToMainPageFlow() {
+        return new MainPageFlow();
     }
 }
