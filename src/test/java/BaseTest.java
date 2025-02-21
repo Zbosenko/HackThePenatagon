@@ -12,6 +12,13 @@ public class BaseTest {
         Selenide.open(Configuration.baseUrl);
     }
 
+    /*
+    * Вынести авторизацию сюда, в отдельный метод.
+    * Начать с LoginPageFlow
+    * повторить шаги реализованные в тестах
+    * вернуть MainPageFlow.
+    */
+
 
     @AfterAll
     public static void closeWebDriver() {
