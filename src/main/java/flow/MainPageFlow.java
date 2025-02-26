@@ -21,4 +21,8 @@ public class MainPageFlow {
         page(MainPage.class).getProductName().findBy(Condition.text(productName)).shouldBe(Condition.exist);
         return this;
     }
+
+    public ProductCardPageFlow goToProductCartPageFlow() {
+        return new ProductCardPageFlow();
+    }
 }
