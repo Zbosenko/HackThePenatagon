@@ -1,0 +1,11 @@
+Циклы и ElementsCollection.
+
+На уроке реализовали тест содержащий цикл проверяющий 3 заголовка со страницы - public MainPageFlow assertThreeProductsOnProductPage(List<String> listOfProducts)
+
+Познакомились с циклами, коснулись коллекций (List).
+
+
+Домашка:
+    1. Написать автотест, проверяющий 4 заголовка на странице по аналогии с checkThreeProductNames()
+    2. Написать 5-10 автотестов в проект, используя все изученные нами штуки дрюки.
+        (SelenideElement, ElementsCollection, циклы, коллекции (тут как сможешь, как повезет))
