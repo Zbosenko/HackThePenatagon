@@ -33,7 +33,7 @@ public class MainPaigeTests extends BaseTest {
 
         start
                 .clickProductByName(productName)
-                .goToProductCartPageFlow()
+                .goToProductCardPageFlow()
                 .clickAddToCartButton()
                 .clickShoppingCartLinkButton()
                 .goToShoppingListPageFlow()
@@ -60,6 +60,19 @@ public class MainPaigeTests extends BaseTest {
                 .assertThreeProductsOnProductPage(listOfProductName);
     }
 
+    @Test
+    void checkFourProductNames() {
+        String lightProductName = "Sauce Labs Bike Light";
+        String backpackProductName = "Sauce Labs Backpack";
+        String tShirtProductName = "Sauce Labs Bolt T-Shirt";
+        String jacketProductName = "Sauce Labs Fleece Jacket";
+
+        List<String> listOfProductName = List.of(lightProductName, backpackProductName, tShirtProductName, jacketProductName);
+
+        start
+                .assertFourProductsOnProductPage(listOfProductName);
+
+    }
 
     @AfterEach
     void after() {
