@@ -34,7 +34,26 @@ public class MainPageFlow {
         return this;
     }
 
-    public ProductCardPageFlow goToProductCartPageFlow() {
+
+    /* объявляю наследуемыйКласс новыйКласс(объявление коллекции, которую он будет от меня принимать) {
+        объявлениеКоллекции названиеНовойКоллекции = создайОбъектСтраницы(наследуетсяОтКласса).получиВсеНазванияТоваров();
+        для (int i = 0, i<3; i++) /это перечисление условий, по которым мы двигаемся/ {
+            Строка названиеТовара = названиеТовараПолучанноеВНачале.получи(i - для каждого индекса);
+            названиеНовойКоллекции.найдиПо(условие.текст(названиеТовара)).должноБыть(условие.существовать);
+        }
+        верни это;
+    }*/
+
+    public MainPageFlow assertFourProductsOnProductPage(List<String> listOfProducts) {
+        ElementsCollection actualListOfProducts = page(MainPage.class).getProductName();
+        for (int i = 0; i < 3; i++) {
+            String productHeader = listOfProducts.get(i);
+            actualListOfProducts.findBy(Condition.text(productHeader)).shouldBe(Condition.exist);
+        }
+        return this;
+    }
+
+    public ProductCardPageFlow goToProductCardPageFlow() {
         return new ProductCardPageFlow();
     }
 }
